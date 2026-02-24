@@ -26,3 +26,13 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.bo.cindent = false
   end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "c", "cpp", "h", "hpp" },
+  callback = function()
+    vim.bo.expandtab = true -- use spaces
+    vim.bo.tabstop = 4
+    vim.bo.shiftwidth = 4
+    vim.bo.softtabstop = 4
+  end,
+})
